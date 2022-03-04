@@ -1,0 +1,37 @@
+﻿@model Rehber.Models.KisiModel.KisiIndexViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Kişiler</h2>
+
+<table class="table">
+    <tr>
+
+        <th>İsim</th>
+        <th>Soyisim</th>
+        <th>Cep Telefon</th>
+        <th>Email Adres</th>
+        <th>İşlemler</th>
+    </tr>
+    @foreach (var kisi in Model.Kisiler)
+    {
+        <tr>
+
+            <td>@kisi.Ad</td>
+            <td>@kisi.Soyad</td>
+            <td>@kisi.CepTelefon</td>
+            <td>@kisi.EmailAdres</td>
+            
+            <td>
+                @Html.ActionLink("Guncelle", "Guncelle", new { id = kisi.Id }) <br />
+                @Html.ActionLink("Detay", "Detay", new { id = kisi.Id })<br />
+                @Html.ActionLink("Sil","Sil", new { id = kisi.Id },new {onclick="return confirm('Kişiyi silmek isteğinize emin misiniz?');"})
+            </td>
+
+        </tr>
+    }
+
+
+</table>

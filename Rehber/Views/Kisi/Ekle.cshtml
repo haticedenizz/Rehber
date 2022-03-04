@@ -1,0 +1,44 @@
+﻿
+@model Rehber.Models.Entities.Kisi
+
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Ekle</h2>
+
+<form class="form-horizontal" method="post" action="/Kisi/Ekle/">
+    <div class="form-group">
+     
+        @Html.LabelFor(x => x.Ad)
+        @Html.TextBoxFor(x => x.Ad, null, new { @class = "form-control" })
+
+    </div>
+    <div class="form-group">
+      
+        @Html.LabelFor(x => x.Soyad)
+        @Html.TextBoxFor(x => x.Soyad, null, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+   
+        @Html.LabelFor(x => x.CepTelefon)
+        @Html.TextBoxFor(x => x.CepTelefon, null, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+
+        @Html.LabelFor(x => x.EmailAdres)
+        @Html.TextBoxFor(x => x.EmailAdres, null, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+
+        @Html.LabelFor(x => x.Adres)
+        @Html.TextBoxFor(x => x.Adres, null, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="Kaydet" />
+    </div>
+
+</form>
+
